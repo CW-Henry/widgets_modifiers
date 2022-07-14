@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-Flutter library that transform common-use widgets into companion modifiers, countering tree-like structure in code.
+Flutter library that transform common-use widgets into companion modifiers, collapsing Flutter tree-like code structure.
 
 ## Features
 
@@ -36,7 +36,7 @@ to `/example` folder.
                 ColoredBox(color: Colors.green).frame(width: 100, height: 160)
             ]
         )
-     )
+     );
   }
 ```
 

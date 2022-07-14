@@ -23,9 +23,6 @@ If you desire to flatten widget build tree nesting widgets, or to optimize curre
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
   @override
   Widget build(BuildContext context) {

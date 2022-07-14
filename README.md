@@ -38,5 +38,5 @@ If you desire to flatten widget build tree nesting widgets, or to optimize curre
 ```
 
 ## Additional information
-Latest version and changelogs can be found at https://github.com/CW-Henry/widget_modifiers.
-If you are interested in contributing or studying the docs, please visit https://github.com/CW-Henry/widget_modifiers.
+Please use latest stable versions as in changelogs.
+If you are interested in contributing or any bugs are found, please create a post on the widgets_modifiers library repo Wiki page.  

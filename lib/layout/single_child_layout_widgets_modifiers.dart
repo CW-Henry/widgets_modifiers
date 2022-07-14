@@ -6,36 +6,35 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
   /// Modifier for setting widget size.
   Widget frame(
       {double? minWidth,
-        double? minHeight,
-        double? width,
-        double? height,
-        double? maxWidth,
-        double? maxHeight,
-        double? idealWidth,
-        double? idealHeight}) {
+      double? minHeight,
+      double? width,
+      double? height,
+      double? maxWidth,
+      double? maxHeight,
+      double? idealWidth,
+      double? idealHeight}) {
     return minWidth != null || minHeight != null
         ? ConstrainedBox(
-        constraints: BoxConstraints(
-            minWidth: minWidth ?? 0.0, minHeight: minHeight ?? 0.0))
+            constraints: BoxConstraints(
+                minWidth: minWidth ?? 0.0, minHeight: minHeight ?? 0.0))
         : width != null || height != null
-        ? SizedBox(
-      width: width,
-      height: height,
-    )
-        : maxWidth != null || maxHeight != null
-        ? LimitedBox(
-      maxWidth: maxWidth ?? double.infinity,
-      maxHeight: maxHeight ?? double.infinity,
-      child: this,
-    )
-        : idealWidth != null || idealHeight != null
-        ? PreferredSize(
-        preferredSize: Size(idealWidth ?? double.infinity,
-            idealHeight ?? double.infinity),
-        child: this)
-        : const SizedBox.shrink();
+            ? SizedBox(
+                width: width,
+                height: height,
+              )
+            : maxWidth != null || maxHeight != null
+                ? LimitedBox(
+                    maxWidth: maxWidth ?? double.infinity,
+                    maxHeight: maxHeight ?? double.infinity,
+                    child: this,
+                  )
+                : idealWidth != null || idealHeight != null
+                    ? PreferredSize(
+                        preferredSize: Size(idealWidth ?? double.infinity,
+                            idealHeight ?? double.infinity),
+                        child: this)
+                    : const SizedBox.shrink();
   }
-
 
   /// Modifier for aligning child widgets in place, e.g. in a large Column or Row.
   Align align({

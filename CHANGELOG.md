@@ -1,3 +1,5 @@
+## 0.2.4
+* Fixed unwrapped frame bug
 ## 0.2.3
 
 ## 0.2.2

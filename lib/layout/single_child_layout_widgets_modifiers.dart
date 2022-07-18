@@ -21,6 +21,7 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
             ? SizedBox(
                 width: width,
                 height: height,
+                child: this
               )
             : maxWidth != null || maxHeight != null
                 ? LimitedBox(

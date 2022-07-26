@@ -1,6 +1,6 @@
 name: widgets_modifiers
 description: Flutter library that transform common-use widgets into companion modifiers, collapsing Flutter tree-like code structure.
-version: 0.3.41
+version: 0.3.42
 repository: https://github.com/CW-Henry/widgets_modifiers
 
 environment:

@@ -65,12 +65,12 @@ If you desire to flatten widget build tree nesting widgets, or to optimize curre
 
 Widget modifiers parameters are mostly similar to their original flutter widget counterpart, with the following exceptions -
 
-# a. Interaction widgets
+## a. Interaction widgets
 
   - GestureDetector is renamed .gesture()
   - InkWell is renamed .ripple()
 
-# b. Layout widgets
+## b. Layout widgets
 
   - Flutter widgets (ConstrainedBox, SizedBox, LimitedBox, PreferredSize) are condensed into .frame(), as different modifiable parameters
 
@@ -127,7 +127,7 @@ Widget modifiers parameters are mostly similar to their original flutter widget 
     
     Priority: minSize > Size > maxSize > preferredSize.
 
-# c. Painting widgets
+## c. Painting widgets
   
   - Border as in .border() will draw all four sides width by default (1.0, changeable by    user) around the enforced widget, however if the user wants a more customized border it can be done by providing a border parameter(default to null) for .border().
 
@@ -146,7 +146,7 @@ Widget modifiers parameters are mostly similar to their original flutter widget 
 
   - .shadow() is constructed with BoxShadow in BoxDecoration
 
-# d. Styling widgets
+## d. Styling widgets
 
   - .padding() utilizes flutter EdgeInsets class constructors to calculate widgets padding preferences.
 

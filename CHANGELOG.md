@@ -1,4 +1,5 @@
-## 0.3.41
+## 0.3.42
+* Fix Widget class error
 * Fix Formal parameters error 
 
 ## 0.3.2

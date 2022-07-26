@@ -84,7 +84,7 @@ extension PaintingEffectWidgetsModifiers on Widget {
   }
 
   /// Modifier for translate ability under Transform Widget.
-  Transform.translate translate({
+  Transform translate({
     required Offset offset,
     bool transformHitTests = true,
     FilterQuality? filterQuality

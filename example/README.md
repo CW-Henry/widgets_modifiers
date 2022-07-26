@@ -13,6 +13,7 @@ import 'package:widgets_modifiers/style/styling_widgets_modifiers.dart';
 enum IncludedModifiers {
   
   /// Interactions Modifiers
+  absorbPointer,
   gesture,
   ripple,
 
@@ -21,16 +22,22 @@ enum IncludedModifiers {
   align,
   center,
   aspectRatio,
+  flexible,
   expand,
 
   /// Painting Modifiers
+  ink,
   border,
   shadow,
   transform,
+  translate,
   opacity,
 
   /// Styling Modifiers
+  safeArea,
   padding,
+  theme,
+  material
 }
 
 

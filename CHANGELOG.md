@@ -1,3 +1,6 @@
+## 0.3.0
+* Added multiple widget modifiers, added custom border option
+
 ## 0.2.4
 * Fixed unwrapped frame bug
 ## 0.2.3

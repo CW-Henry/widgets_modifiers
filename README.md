@@ -23,7 +23,7 @@ If you desire to flatten widget build tree nesting widgets, or to optimize curre
 
 ## Usage
 
-Simple implementation: 
+Quickstart: 
 ```dart
   @override
   Widget build(BuildContext context) {
@@ -31,19 +31,22 @@ Simple implementation:
         body: Wrap(
             children: [
                 Text("Text with Padding").padding(bottom: 16),
-                ColoredBox(color: Colors.green).frame(width: 100, height: 160) // Same as SizedBox usage
+                FlutterLogo().aspectRatio(16/9) // Same as SizedBox usage
             ]
         )
      );
   }
 ```
 Widget modifiers parameters are mostly similar to their original flutter widget counterpart, with the following exceptions:
-  // Interactions Widgets
-  - GestureDetector is renamed '.gesture'
-  - InkWell is renamed '.ripple'
 
-  // Layout Widgets
-  - ConstrainedBox, SizedBox, LimitedBox, PreferredSize are condensed into '.frame', with different parameters
+# Interaction widgets
+
+  - GestureDetector is renamed .gesture()
+  - InkWell is renamed .ripple()
+
+# Layout widgets
+
+  - ConstrainedBox, SizedBox, LimitedBox, PreferredSize are condensed into .frame(), with different parameters
 
     i. ConstrainedBox
     ```dart
@@ -94,9 +97,26 @@ Widget modifiers parameters are mostly similar to their original flutter widget 
       }
     ```
 
-    !! If two unrelated properties are used in .frame, it may produce unexpected errors. As default, .frame uses priority approach to decide which proporties to use. 
+    !! If two unrelated properties are used in .frame(), it may produce unexpected errors. As default, .frame() uses priority approach to decide which proporties to use. 
     
     Priority: minSize > Size > maxSize > preferredSize.
+
+# Painting widgets
+  
+  - Border as in .border() will draw all four sides width by default (1.0, changeable by user) around the enforced widget, however if the user wants a more customized border it can be done by providing a border parameter(default to null) for .border().
+
+  For instance:
+    ```dart
+      ColoredBox(color: Color(0xFFBFBFBF))
+        .border(border: Border(
+            top: BorderSide(width: 3.0, color: Color(0xFFDFDFDF)),
+            left: BorderSide(width: 4.0, color: Color(0xFFDFDFDF)),
+            right: BorderSide(width: 2.0, color: Color(0xFF7F7F7F)),
+            bottom: BorderSide(width: 1.0, color: Color(0xFF7F7F7F)),
+          )
+        ) // HERE
+    ```
+    * Do note that if a border parameter is provided for .border(), it will override any value in width parameter.
 
 
 ## Additional information

@@ -6,9 +6,8 @@ import 'package:flutter/material.dart';
 extension TouchInteractionsWidgetsModifiers on Widget {
   /// Modifiers for absorbing pointer events.
   AbsorbPointer absorbPointer({
-    this.absorbing = true,
-    Widget? child,
-    this.ignoringSemantics,
+    bool absorbing = true,
+    bool? ignoringSemantics
   }) {
     return AbsorbPointer(
       absorbing: absorbing,

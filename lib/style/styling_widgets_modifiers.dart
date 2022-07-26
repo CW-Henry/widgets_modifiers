@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 extension StylingWidgetsModifiers on Widget {
   /// Modifier for Safearea inclusion.
   SafeArea safeArea({
-    this.left = true,
-    this.top = true,
-    this.right = true,
-    this.bottom = true,
-    this.minimum = EdgeInsets.zero,
-    this.maintainBottomViewPadding = false,
-    required this.child,
+    bool left = true,
+    bool top = true,
+    bool right = true,
+    bool bottom = true,
+    EdgeInsets minimum = EdgeInsets.zero,
+    bool maintainBottomViewPadding = false
   }){
     return SafeArea(
       left: left,
@@ -55,10 +54,7 @@ extension StylingWidgetsModifiers on Widget {
   }
 
   /// Modifier for setting widgets Theme Data.
-  Theme theme({
-    required this.data,
-    required this.child,
-  }) {
+  Theme theme(ThemeData data) {
     return Theme({
       data: data,
       child: this,
@@ -67,18 +63,17 @@ extension StylingWidgetsModifiers on Widget {
 
   /// Modifier for creating a piece of material for widgets.
   Material material({
-    this.type = MaterialType.canvas,
-    this.elevation = 0.0,
-    this.color,
-    this.shadowColor,
-    this.surfaceTintColor,
-    this.textStyle,
-    this.borderRadius,
-    this.shape,
-    this.borderOnForeground = true,
-    this.clipBehavior = Clip.none,
-    this.animationDuration = kThemeChangeDuration,
-    this.child,
+    MaterialType type = MaterialType.canvas,
+    double elevation = 0.0,
+    Color? color,
+    Color? shadowColor,
+    Color? surfaceTintColor,
+    TextStyle? textStyle,
+    BorderRadiusGeometry? borderRadius,
+    ShapeBorder? shape,
+    bool borderOnForeground = true,
+    Clip clipBehavior = Clip.none,
+    Duration animationDuration = kThemeChangeDuration
   }) {
     return Material({
       type: type,

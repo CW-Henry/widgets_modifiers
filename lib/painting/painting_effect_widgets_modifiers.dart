@@ -5,21 +5,20 @@ import 'package:flutter/material.dart';
 extension PaintingEffectWidgetsModifiers on Widget {
   /// Modifier for painting a decoration (which can be a simple color) on a Material.
   Ink ink({
-    this.padding,
+    EdgeInsetsGeometry? padding,
     Color? color,
     Decoration? decoration,
-    this.width,
-    this.height,
-    this.child,
+    double? width,
+    double? height
   }) {
-    return Ink({
+    return Ink(
       padding: padding,
       color: color,
       decoration: decoration,
       width: width,
       height: height,
       child: this,
-    });
+    );
   }
   /// Modifier for drawing borders around widgets.
   DecoratedBox border({
@@ -50,7 +49,7 @@ extension PaintingEffectWidgetsModifiers on Widget {
     double blurRadius = 0.0,
     double spreadRadius = 0.0,
     BlurStyle blurStyle = BlurStyle.normal,
-    DecorationPosition position = DecorationPosition.background,
+    DecorationPosition position = DecorationPosition.background
   }) {
     return DecoratedBox(
       decoration: BoxDecoration(boxShadow: [
@@ -72,7 +71,7 @@ extension PaintingEffectWidgetsModifiers on Widget {
     Offset? origin,
     AlignmentGeometry? alignment,
     bool transformHitTests = true,
-    FilterQuality? filterQuality,
+    FilterQuality? filterQuality
   }) {
     return Transform(
       transform: transform,
@@ -87,9 +86,8 @@ extension PaintingEffectWidgetsModifiers on Widget {
   /// Modifier for translate ability under Transform Widget.
   Transform.translate translate({
     required Offset offset,
-    this.transformHitTests = true,
-    this.filterQuality,
-    Widget? child,
+    bool transformHitTests = true,
+    FilterQuality? filterQuality
   }) {
     return Transform.translate(
       offset: offset,
@@ -102,7 +100,7 @@ extension PaintingEffectWidgetsModifiers on Widget {
   /// Modifier for adding opaque widgets.
   Opacity opacity({
     required double opacity,
-    bool alwaysIncludeSemantics = false,
+    bool alwaysIncludeSemantics = false
   }) {
     return Opacity(
       opacity: opacity,

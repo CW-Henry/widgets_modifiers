@@ -64,9 +64,7 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
   }
 
   /// Modifier for providing widget aspect ratio attributes.
-  AspectRatio aspectRatio(
-      double aspectRatio
-    ) {
+  AspectRatio aspectRatio(double aspectRatio) {
     return AspectRatio(
       aspectRatio: aspectRatio,
       child: this,
@@ -75,9 +73,8 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
 
   /// Modifier for flex wrap widgets.
   Flexible flexible({
-    this.flex = 1,
-    this.fit = FlexFit.loose,
-    required Widget child,
+    int flex = 1,
+    FlexFit fit = FlexFit.loose
   }) {
     return Flexible(
       flex: flex,
@@ -87,9 +84,7 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
   }
 
   /// Modifier for expanding widgets.
-  Expanded expand({
-      int flex = 1
-    }) {
+  Expanded expand({int flex = 1}) {
     return Expanded(
       flex: flex,
       child: this,

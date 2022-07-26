@@ -1,3 +1,6 @@
+## 0.3.4
+* Fix Formal parameters error 
+
 ## 0.3.2
 * Removed unnecessary key parameter for widgets
 

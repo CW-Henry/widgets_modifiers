@@ -1,5 +1,6 @@
 ## 0.3.0
 * Added multiple widget modifiers, added custom border option
+* Major update for README.md
 
 ## 0.2.4
 * Fixed unwrapped frame bug

@@ -21,32 +21,58 @@ Ready-to-use flutter UI modifiers.
 
 If you desire to flatten widget build tree nesting widgets, or to optimize current Flutter code.
 
-## Usage
+## Quickstart
 
-Quickstart: 
 ```dart
   @override
   Widget build(BuildContext context) {
      return Scaffold(
         body: Wrap(
             children: [
-                Text("Text with Padding").padding(bottom: 16),
-                FlutterLogo().aspectRatio(16/9) // Same as SizedBox usage
+                // Format for widget modifiers, below is equal to Padding(padding: EdgeInsets.only(bottom: 16),child: Text('with padding'))
+                Text('with padding').padding(bottom: 16),
+
+                // You can also chain multiple widget modifiers, in the order when child widget are wrapped by its parent
+                FlutterLogo().frame(width: 650, height: 300) // Same as SizedBox usage
+                          .aspectRatio(16/9) 
+                          .border(color: Colors.yellow, width: 2.0)
+                          .ripple(onTap: (){
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('You clicked!'),
+                                content: const Text('I am Flutter Logo'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context, 'Yes'),
+                                    child: const Text('OK'),
+                                  ),
+                                ],
+                              ),
+                            )
+                          })
+                          .center()
+                          .expand()
+                          ...
+                // The chaining of widget modifiers does not have a limit.
             ]
         )
      );
   }
 ```
-Widget modifiers parameters are mostly similar to their original flutter widget counterpart, with the following exceptions:
 
-# Interaction widgets
+# Detailed Usage
+
+Widget modifiers parameters are mostly similar to their original flutter widget counterpart, with the following exceptions -
+
+# a. Interaction widgets
 
   - GestureDetector is renamed .gesture()
   - InkWell is renamed .ripple()
 
-# Layout widgets
+# b. Layout widgets
 
-  - ConstrainedBox, SizedBox, LimitedBox, PreferredSize are condensed into .frame(), with different parameters
+  - Flutter widgets (ConstrainedBox, SizedBox, LimitedBox, PreferredSize) are condensed into .frame(), as different modifiable parameters
 
     i. ConstrainedBox
     ```dart
@@ -101,11 +127,11 @@ Widget modifiers parameters are mostly similar to their original flutter widget 
     
     Priority: minSize > Size > maxSize > preferredSize.
 
-# Painting widgets
+# c. Painting widgets
   
-  - Border as in .border() will draw all four sides width by default (1.0, changeable by user) around the enforced widget, however if the user wants a more customized border it can be done by providing a border parameter(default to null) for .border().
+  - Border as in .border() will draw all four sides width by default (1.0, changeable by    user) around the enforced widget, however if the user wants a more customized border it can be done by providing a border parameter(default to null) for .border().
 
-  For instance:
+    For instance:
     ```dart
       ColoredBox(color: Color(0xFFBFBFBF))
         .border(border: Border(
@@ -116,10 +142,42 @@ Widget modifiers parameters are mostly similar to their original flutter widget 
           )
         ) // HERE
     ```
-    * Do note that if a border parameter is provided for .border(), it will override any value in width parameter.
+    * Do note that if a border parameter is provided for .border(), it will override any given value in width parameter.
 
+  - .shadow() is constructed with BoxShadow in BoxDecoration
+
+# d. Styling widgets
+
+  - .padding() utilizes flutter EdgeInsets class constructors to calculate widgets padding preferences.
+
+    Supported Constructors: 
+
+      i. EdgeInsets.all(double value)
+      ```dart
+        Stack(...).padding(all: 16)
+      ```
+
+      ii. EdgeInsets.symmetric({double vertical = 0.0, double horizontal = 0.0})
+      ```dart
+        Stack(...).padding(vertical: 8, horizontal: 12)
+      ```
+
+      iii. EdgeInsets.only({double left = 0.0, double top = 0.0, double right = 0.0, double bottom = 0.0})
+      ```dart
+        Stack(...).padding(left: 8, top: 6, right: 10, bottom: 13)
+      ```
+
+    * if none parameters value are provided, associating widgets with .padding() modifier will return default padding of 8 in all directions.
+
+    * For EdgeInsets class information, please refer to Flutter documentation https://api.flutter.dev/flutter/painting/EdgeInsets-class.html
+
+# Suggestions and more features
+
+Feel free to provide your suggestions if you found any missing features that you would like widgets_modifiers to add.
+If you are interested in contributing or any bugs are found, please create a post on the widgets_modifiers library repo Wiki page.  
 
 ## Additional information
-Please refer to Example page for all provided modifiers.
-Latest stable versions as in changelogs are recommended.
-If you are interested in contributing or any bugs are found, please create a post on the widgets_modifiers library repo Wiki page.  
+
+Please refer to Example page for collection of all currently provided modifiers.
+If you are using the package in your Flutter project, please check and use the latest stable versions as in changelogs.
+

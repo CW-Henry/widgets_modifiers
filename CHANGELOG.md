@@ -1,3 +1,6 @@
+## 0.3.2
+* Removed unnecessary key parameter for widgets
+
 ## 0.3.0
 * Added multiple widget modifiers, added custom border option
 * Major update for README.md

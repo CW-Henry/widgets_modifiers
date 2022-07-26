@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 extension StylingWidgetsModifiers on Widget {
   /// Modifier for Safearea inclusion.
   SafeArea safeArea({
-    Key? key,
     this.left = true,
     this.top = true,
     this.right = true,
@@ -31,7 +30,6 @@ extension StylingWidgetsModifiers on Widget {
   /// EdgeInsets.symmetric() -> EdgeInsets.only() -> EdgeInsets.all(8).
   /// If none parameters are provided, it returns default padding value of 8.0.
   Padding padding({
-      Key? key,
       double? left,
       double? right,
       double? top,
@@ -58,7 +56,6 @@ extension StylingWidgetsModifiers on Widget {
 
   /// Modifier for setting widgets Theme Data.
   Theme theme({
-    Key? key,
     required this.data,
     required this.child,
   }) {
@@ -70,7 +67,6 @@ extension StylingWidgetsModifiers on Widget {
 
   /// Modifier for creating a piece of material for widgets.
   Material material({
-    Key? key,
     this.type = MaterialType.canvas,
     this.elevation = 0.0,
     this.color,

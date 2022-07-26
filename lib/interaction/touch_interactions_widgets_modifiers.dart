@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 extension TouchInteractionsWidgetsModifiers on Widget {
   /// Modifiers for absorbing pointer events.
   AbsorbPointer absorbPointer({
-    Key? key,
     this.absorbing = true,
     Widget? child,
     this.ignoringSemantics,
@@ -20,8 +19,7 @@ extension TouchInteractionsWidgetsModifiers on Widget {
 
   /// Modifiers for declaring gestures actions.
   GestureDetector gesture(
-      {Key? key,
-      GestureTapDownCallback? onTapDown,
+      {GestureTapDownCallback? onTapDown,
       GestureTapUpCallback? onTapUp,
       GestureTapCallback? onTap,
       GestureTapCancelCallback? onTapCancel,
@@ -64,8 +62,7 @@ extension TouchInteractionsWidgetsModifiers on Widget {
   /// Modifiers for adding ripple effect on widget, and their gestures actions.
   /// This utilizes Flutter built-in InkWell widget.
   InkWell ripple(
-      {Key? key,
-      GestureTapCallback? onTap,
+      {GestureTapCallback? onTap,
       GestureTapCallback? onDoubleTap,
       GestureLongPressCallback? onLongPress,
       GestureTapDownCallback? onTapDown,

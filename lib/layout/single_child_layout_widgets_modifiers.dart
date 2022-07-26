@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 extension SingleChildLayoutWidgetsModifiers on Widget {
   /// Modifier for setting widget size.
   Widget frame(
-      {Key? key,
-      double? minWidth,
+      {double? minWidth,
       double? minHeight,
       double? width,
       double? height,
@@ -40,7 +39,6 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
 
   /// Modifier for aligning child widgets in place, e.g. in a large Column or Row.
   Align align({
-    Key? key,
     AlignmentGeometry alignment = Alignment.center,
     double? widthFactor,
     double? heightFactor,
@@ -55,7 +53,6 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
 
   /// Modifier for centering widgets.
   Center center({
-    Key? key,
     double? widthFactor,
     double? heightFactor,
   }) {
@@ -67,7 +64,9 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
   }
 
   /// Modifier for providing widget aspect ratio attributes.
-  AspectRatio aspectRatio(Key? key, double aspectRatio) {
+  AspectRatio aspectRatio(
+      double aspectRatio
+    ) {
     return AspectRatio(
       aspectRatio: aspectRatio,
       child: this,
@@ -76,7 +75,6 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
 
   /// Modifier for flex wrap widgets.
   Flexible flexible({
-    Key? key,
     this.flex = 1,
     this.fit = FlexFit.loose,
     required Widget child,
@@ -89,7 +87,9 @@ extension SingleChildLayoutWidgetsModifiers on Widget {
   }
 
   /// Modifier for expanding widgets.
-  Expanded expand({Key? key, int flex = 1}) {
+  Expanded expand({
+      int flex = 1
+    }) {
     return Expanded(
       flex: flex,
       child: this,

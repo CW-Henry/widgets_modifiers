@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 extension PaintingEffectWidgetsModifiers on Widget {
   /// Modifier for painting a decoration (which can be a simple color) on a Material.
   Ink ink({
-    Key? key,
     this.padding,
     Color? color,
     Decoration? decoration,
@@ -24,7 +23,6 @@ extension PaintingEffectWidgetsModifiers on Widget {
   }
   /// Modifier for drawing borders around widgets.
   DecoratedBox border({
-    Key? key,
     Color color = const Color(0xFF000000),
     double width = 1.0,
     Border? border,
@@ -47,7 +45,6 @@ extension PaintingEffectWidgetsModifiers on Widget {
 
   /// Modifier for adding a shadow for widgets.
   DecoratedBox shadow({
-    Key? key,
     Color color = const Color(0xFF000000),
     Offset offset = Offset.zero,
     double blurRadius = 0.0,
@@ -71,7 +68,6 @@ extension PaintingEffectWidgetsModifiers on Widget {
 
   /// Modifier for transform properties.
   Transform transform({
-    Key? key,
     required Matrix4 transform,
     Offset? origin,
     AlignmentGeometry? alignment,
@@ -90,7 +86,6 @@ extension PaintingEffectWidgetsModifiers on Widget {
 
   /// Modifier for translate ability under Transform Widget.
   Transform.translate translate({
-    Key? key,
     required Offset offset,
     this.transformHitTests = true,
     this.filterQuality,
@@ -106,7 +101,6 @@ extension PaintingEffectWidgetsModifiers on Widget {
 
   /// Modifier for adding opaque widgets.
   Opacity opacity({
-    Key? key,
     required double opacity,
     bool alwaysIncludeSemantics = false,
   }) {

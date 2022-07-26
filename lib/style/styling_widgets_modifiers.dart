@@ -55,10 +55,10 @@ extension StylingWidgetsModifiers on Widget {
 
   /// Modifier for setting widgets Theme Data.
   Theme theme(ThemeData data) {
-    return Theme({
+    return Theme(
       data: data,
       child: this,
-    });
+    );
   }
 
   /// Modifier for creating a piece of material for widgets.
@@ -75,7 +75,7 @@ extension StylingWidgetsModifiers on Widget {
     Clip clipBehavior = Clip.none,
     Duration animationDuration = kThemeChangeDuration
   }) {
-    return Material({
+    return Material(
       type: type,
       elevation: elevation,
       color: color,
@@ -88,6 +88,6 @@ extension StylingWidgetsModifiers on Widget {
       clipBehavior: clipBehavior,
       animationDuration: animationDuration,
       child: this,
-    });
+    );
   }
 }
